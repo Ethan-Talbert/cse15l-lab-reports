@@ -38,10 +38,24 @@ Here is an example of me navigating through the remote machine using these comma
 
 ![step3.1](https://ethan-talbert.github.io/cse15l-lab-reports/images/week-1/week1-step3.1.png)
 
-Try them out for yourself a little bit before we continue here just to get used to working on a remote machine.
+Try them out for yourself a little bit before we continue here just to get used to working on a remote machine. Once you are finished, use the `exit` command to get back to your local computer.
 
 ## Step 4: Moving Files Using `scp`
 
-For this step we'll be using the `WhereAmI.java` program we've used in the past. Add a java file with this code in it to your local machine:
+In order to get the most use out of remote machines, we need to be able to move data and code from our own computers to the remote one. For this step we'll be using the `WhereAmI.java` program we've used in the past. Add a java file with this code in it to your local machine:
 
 ![step4.1](https://ethan-talbert.github.io/cse15l-lab-reports/images/week-1/week1-step4.1.png)
+
+When we compile and run this file on our own personal computer, we get something like the following:
+
+![step4.2](https://ethan-talbert.github.io/cse15l-lab-reports/images/week-1/week1-step4.2.png)
+
+Now let's try and copy this file to our remote machine. Type in the following command and type your password when it prompts you.
+
+`scp WhereAmI.java cs15lfa22hj@ieng6.ucsd.edu:~/`
+
+This will copy the file over to the remote machine. Now, once we `ssh` back into the machine, we can compile and run it there and we will get something like this:
+
+![step4.3](https://ethan-talbert.github.io/cse15l-lab-reports/images/week-1/week1-step4.3.png)
+
+This means that our program is running from inside the remote machine, and that we successfully copied code from our local machine to the remote one.
