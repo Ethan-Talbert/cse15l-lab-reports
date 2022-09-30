@@ -71,3 +71,15 @@ Once you have generated your ssh keys, you need to move to public one to the rem
 `scp ~/.ssh/id_rsa.pub cs15lfa22hj@ieng6.ucsd.edu:~/.ssh/authorized_keys`
 
 If all went well, you now should be able to ssh into the remote machine and scp files without inputting a password.
+
+## Step 6: Optimization of Remote Running
+
+Now that we are omptimizing for speed, we can introduce a couple more shortcuts. When running ssh, you can add an argument at the end to run a command remotely on one line. Additionally, you can add multiple commands to one line by connecting them with semicolons. Combining these two pieces of information, we can create a super command that runs a java file on the remote machine with very little effort. Consider `WhereAmI.java`. If we have a small update, we can run the following command and it will remotely compile and run `WhereAmI.java`.
+
+![step6.1](https://ethan-talbert.github.io/cse15l-lab-reports/images/week-1/week1-step6.1.png)
+
+Theoretically, this limits the amount of keystrokes we need to remotely run any java file to just two: the up arrow key to fetch this command and the enter key. This simplifies our workflow tremendously.
+
+## Finishing Up
+
+Thanks for reading this guide! Check out some of my other lab reports on this page!
