@@ -13,3 +13,11 @@ After downloading the `.deb` file, navigate your terminal to the location of the
 `sudo apt install FILE_NAME_HERE.deb`
 
 This should install VSCode onto your computer, completing the first step.
+
+## Step 2: Remotely Connecting
+
+Once you have VSCode, connecting to a remote machine using the ssh command is very easy. Simply click the 'Terminal' button at the top of the VSCode window and type in the following command:
+
+`ssh cs15lfa22hj@ieng6.ucsd.edu`
+
+The part before the @ symbol represents your username for this class and can be changed out if you have a different username. The part after the @ symbol represents the remote machine you are connecting to. After you type in the command it should ask for a password. Type in your password for this account and press enter
