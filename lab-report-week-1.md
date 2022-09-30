@@ -59,3 +59,15 @@ This will copy the file over to the remote machine. Now, once we `ssh` back into
 ![step4.3](https://ethan-talbert.github.io/cse15l-lab-reports/images/week-1/week1-step4.3.png)
 
 This means that our program is running from inside the remote machine, and that we successfully copied code from our local machine to the remote one.
+
+## Step 5: Setting an ssh key
+
+Typing in a password every time you want to get into the remote machine seems inefficient. Luckily there's an easy way to circumvent this: by setting an ssh key. Run `ssh-keygen` in your terminal and press enter through all of the prompts. You should get something similar to this:
+
+![step5.1](https://ethan-talbert.github.io/cse15l-lab-reports/images/week-1/week1-step5.1.png)
+
+Once you have generated your ssh keys, you need to move to public one to the remote machine. Let's first make a folder for ssh keys in our remote machine. Connect to the machine and make a directory named `.ssh`. Now, exit back to your local machine and run the following command:
+
+`scp ~/.ssh/id_rsa.pub cs15lfa22hj@ieng6.ucsd.edu:~/.ssh/authorized_keys`
+
+If all went well, you now should be able to ssh into the remote machine and scp files without inputting a password.
