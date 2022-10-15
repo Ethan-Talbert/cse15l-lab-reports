@@ -109,6 +109,35 @@ Finally, to get the last unique result of the server, we can search for a term t
 In this case, `Handler.handleRequest()` knows that the search command is used, but the search term doesn't meet any term in the dictionary, so instead of going through the normal `formatArrayList` process, it instead prints the output seen above.
 
 ## Part 2: Finding and Rewriting Bugs
+
+For the second part of this lab report, we will be looking at two of the bugs I encountered during this week's lab. The first one comes from the file ArrayExamples.java, in the method reversed(). It is supposed to take an array and return a new array with all the elements reversed. The test I wrote for this method is shown below, checking to see if the input `{1, 2, 3}` returns the correct array of `{3, 2, 1}`.
+
+![Image 5](images/week-3/image5.png)
+
+However, when we run the test, this is what shows up in our terminal:
+
+![Image 6](images/week-3/image1.png)
+
+This indicates that the output had a zero in index 0, which doesn't really make sense in the context of this program. However, when you look at the code, you can see that instead of creating a new array and copying the elements of the input in reverse, it copys the elements of the blank new array and puts them in the input array. This was likely just a typo when considering the two arrays, and can be easily fixed by switching them inside the loop like so:
+
+![Image 7](images/week-3/image3.png)
+
+When java creates a new array of a certain length, it fills it with zeros, which explain how we got our failed test from earlier.
+
+Our second bug comes from the `filter()` method in ListExamples.java. The filter method is supposed to return the input list in its current order with the elements that don't meet a filter removed. In my test, the filter is checking that a string is longer than 2 characters, and I input a list with three strings: "Hello", "Hell", and "He", expecting to get a list of "Hello" and "He".
+
+![Image 8](images/week-3/image4.png)
+
+However, when we run the test, we get the following error:
+
+![Image 9](images/week-3/image6.png)
+
+While the filter worked and it removed "He", it reversed the order of the elements in my original list, which is not something it should be doing. The reason for this becomes apparent when we look at the code and see that the loop is adding elements to the start of the new list, rather than the end. This means elements at the end of the input list will end up at the start of the output list. Our fix is to simply alter the add method to add at the end of the generated list like so:
+
+![Image 10](images/week-3/image2.png)
+
+I thought solving these two bugs was a pretty fun exercise, especially since the solutions were fairly simple and easy to implement.
+
 ## Finishing Up
 
 Thanks for reading this guide! Check out some of my other lab reports on this page!
