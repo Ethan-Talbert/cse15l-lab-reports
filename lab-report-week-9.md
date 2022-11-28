@@ -1,4 +1,4 @@
-# CSE 15L Week 7 Lab Report
+# CSE 15L Week 9 Lab Report
 
 In this lab report we will be discussing the automatic grading script I created.
 
