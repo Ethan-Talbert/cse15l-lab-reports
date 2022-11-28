@@ -11,3 +11,5 @@ Hello! I am Ethan Talbert and this is my website for CSE 15L. On this page you c
 [Lab Report Week 5](https://ethan-talbert.github.io/cse15l-lab-reports/lab-report-week-5)
 
 [Lab Report Week 7](https://ethan-talbert.github.io/cse15l-lab-reports/lab-report-week-7)
+
+[Lab Report Week 9](https://ethan-talbert.github.io/cse15l-lab-reports/lab-report-week-9)
